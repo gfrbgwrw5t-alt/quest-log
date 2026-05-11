@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Quest Log">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Quest Log">
+<meta name="theme-color" content="#0a0805">
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIlF1ZXN0IExvZyIsCiAgInNob3J0X25hbWUiOiAiUXVlc3QgTG9nIiwKICAiZGVzY3JpcHRpb24iOiAiV29XLXN0eWxlIHByb2R1Y3Rpdml0eSBxdWVzdCB0cmFja2VyIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwYTA4MDUiLAogICJ0aGVtZV9jb2xvciI6ICIjMGEwODA1IiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLAogICJpY29ucyI6IFsKICAgIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTFFBQUFDMENBWUFBQUE5elFZeUFBQUN0MGxFUVZSNG5PM1NzVTFrTVFCRjBSRVNHeEFRSVlyYVZpaHBDaU9aSXFZREVQbXVaTWtmMlhQL0NVNXMrL2xlWHY0OGZVSEZaZlVGNEVpQ0prWFFwQWlhbEg4Ry9mSDNEYlluYUZJRVRZcWdTUkUwS1ZOQnY3OCtuOHJ0ZGp2VTZ2YzhPa0ZQRXZSZUJEMUowSHNSOUNSQjcwWFFrd1M5RjBGUEV2UmVCRDFKMEhzUjlDUkI3MFhRa3dTOUYwRlBFdlJlQlAwZlI0ZjY5WGtaSW54QkN4cEJDN3BKMElKT0ViU2dVd1F0NkJSQkN6cEYwSUpPRWJTZ1V3UXQ2SlRUQmIwcVZFRUxXdENDRnJTZ3owM1FnazRSdEtCVEJDM29GRUVMT2tYUWdrNFJ0S0JUQkMzb2xFelFsVkFGTFdoQkkyaEJOd2xhMENtQ0ZuU0tvQVdkSW1oQnB3aGEwQ21DRm5TS29BV2RzbjNRbFZCWGYvUlpDRnJRS1lJV2RJcWdCWjBpYUVHbkNGclFLWUlXZElxZ0JaMGlhRUduQ0ZyUUtZY0hMU3dFTFdnRUxXZ0V2WHh3QkMxb0JDM29jeEkwS1lJbVJkQ2tDSnFVdzRPK1hxOUQ3dmY3RXFzSFI5Q0NSdENDUGlkQmt5Sm9VZ1JOaXFCSkVUUXBnaVpGMEtRY0h2VG93YXZDWHowNGdoWTB3d1JOaXFCSkVUUXBnaVpGMEtRSW1oUkJreUpvVXBZRlBXbzAvRkdyQitkM0Nab1VRWk1pYUZJRVRZcWdTUkUwS1lJbVJkQ2tDSnFVN1lNZUpYeCtDRnJRS1lJV2RJcWdCWjBpYUVHbkNGclFLWUlXZElxZ0JaMGlhRUduQ0ZyUUtabWdSd20vVGRDQ1RoRzBvRk1FTGVnVVFRczZSZENDVGhHMG9GTUVMZWdVUVFzNlJkQ0NUamxkMExRSm1oUkJreUpvVWdSTmlxQkpFVFFwZ2laRjBLUUltaFJCa3lKb1VnUk5pcUJKRVRRcGdpWkYwS1FJbWhSQmt5Sm9VZ1JOaXFCSkVUUXBnaVpGMEtRSW1oUkJreUpvVWdSTmlxQkpFVFFwZ2laRjBLUUltaFJCa3lKb1VnUk5pcUJKRVRRcGdpWkYwS1FJbWhSQmt5Sm9VZ1JOaXFCSkVUUXBnaVpGMEtRSW1wVERnNGJkQ0pvVVFaTWlhRklFVGNwdzBQQ29CRTJLb0VrUk5DbUNKdVVieGZLRFVCWFBYVXdBQUFBQVNVVk9SSzVDWUlJPSIsICJzaXplcyI6ICIxODB4MTgwIiwgInR5cGUiOiAiaW1hZ2UvcG5nIn0sCiAgICB7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQVlBQUFEMGVOVDZBQUFQZFVsRVFWUjRuTzNXc1JFbFdSRkUwUWtpUUVCQUlqQUtWekJwRFVOWkk4YURSVVJxNWZYMjVLdktJeHo5UjhldmwvZkgzLy8ybHo4QWdDNC8wajhBQVBqMUJBQUFGQklBQUZCSUFBQkFJUUVBQUlVRUFBQVVFZ0FBVUVnQUFFQWhBUUFBaFFRQUFCUVNBQUJRU0FBQVFDRUJBQUNGamdQZ1AvLytKd0FRSmdBQW9KQUFBSUJDQWdBQUNna0FBQ2drQUFDZ2tBQUFnRUlDQUFBS0NRQUFLQ1FBQUtDUUFBQ0FRZ0lBQUFvSkFBQW9KQUFBb05DWUFQalhQLzRLSS96KysrL3JwYjh4OEg4Q0FDNlJIbWNCQUYwRUFGd2lQYzRDQUxvSUFMaEVlcHdGQUhRUkFIQ0o5RGdMQU9naUFPQVM2WEVXQU5CRkFNQWwwdU1zQUtDTEFJQkxwTWRaQUVBWEFRQ1hTSSt6QUlBdUFnQXVrUjVuQVFCZEJBQmNJajNPQWdDNkNBQzRSSHFjQlFCMEVRQndpZlE0Q3dEb0lnRGdFdWx4RmdEUVJRREFKZExqTEFDZ2l3Q0FTNlRIV1FCQUZ3RUFsMGlQc3dDQUxnSUFMcEVlWndFQVhRUUFYQ0k5emdJQXVnZ0F1RVI2bkFVQWRCRUFjSW4wT0FzQTZDSUE0QkxwY1JZQTBFVUF3Q1hTNHl3QW9Jc0FnRXVreDFrQVFCY0JBSmRJajdNQWdDNENBQzZSSG1jQkFGMEVBRndpUGM0Q0FMb0lBTGhFZXB3RkFIUVJBSENKOURnTEFPZ2lBT0JCZWl4L2hULysrK09YRWgxd0R3RUFEOUxqTEFBRUFIeEpBTUNEOURnTEFBRUFYeElBOENBOXpnSkFBTUNYQkFBOFNJK3pBQkFBOENVQkFBL1M0eXdBQkFCOFNRREFnL1E0Q3dBQkFGOFNBUEFnUGM0Q1FBREFsd1FBUEVpUHN3QVFBUEFsQVFBUDB1TXNBQVFBZkVrQXdJUDBPQXNBQVFCZkVnRHdJRDNPQWtBQXdKY0VBRHhJajdNQUVBRHdKUUVBRDlMakxBQUVBSHhKQU1DRDlEZ0xBQUVBWHhJQThDQTl6Z0pBQU1DWEJBQThTSSt6QUJBQThDVUJBQS9TNHl3QUJBQjhTUURBZy9RNEN3QUJBRjhTQVBBZ1BjNENRQURBbHdRQVBFaVBzd0FRQVBBbEFRQVAwdU1zQUFRQWZFa0F3SVAwT0FzQUFRQmZFZ0R3SUQzT0FrQUF3SmNFQUR4SWo3TUFFQUR3SlFFQUQ5TGpMQUFFQUh4SkFNQ0Q5RGdMQUFFQVh4SUE4Q0E5emdKQUFNQ1hCQUFqcElkeTR4Z25DQUM0aHdCZ2hQUTRDd0FCQU5zSUFFWklqN01BRUFDd2pRQmdoUFE0Q3dBQkFOc0lBRVpJajdNQUVBQ3dqUUJnaFBRNEN3QUJBTnNJQUVaSWo3TUFFQUN3alFCZ2hQUTRDd0FCQU5zSUFFWklqN01BRUFDd2pRQmdoUFE0Q3dBQkFOc0lBRVpJajdNQUVBQ3dqUUJnaFBRNEN3QUJBTnNJQUVaSWo3TUFFQUN3alFCZ2hQUTRDd0FCQU5zSUFFWklqN01BRUFDd2pRQmdoUFE0Q3dBQkFOc0lBRVpJajdNQUVBQ3dqUUJnaFBRNEN3QUJBTnNJQUVaSWo3TUFFQUN3alFCZ2hQUTRDd0FCQU5zSUFFWklqN01BRUFDd2pRQmdoUFE0Q3dBQkFOc0lBRVpJajdNQUVBQ3dqUUJnaFBRNEN3QUJBTnNJQUVaSWo3TUFFQUN3alFCZ2hQUTRDd0FCQU5zSUFFWklqN01BRUFDd2pRQmdoUFE0Q3dBQkFOc0lBRVpJajdNQUVBQ3dqUURnU0hvc0RmTGNRUllBY0FjQndKSDBveTRBQklBQWdIY0VBRWZTajdvQUVBQUNBTjRSQUJ4SlArb0NRQUFJQUhoSEFIQWsvYWdMQUFFZ0FPQWRBY0NSOUtNdUFBU0FBSUIzQkFCSDBvKzZBQkFBQWdEZUVRQWNTVC9xQWtBQUNBQjRSd0J3SlAyb0N3QUJJQURnSFFIQWtmU2pMZ0FFZ0FDQWR3UUFSOUtQdWdBUUFBSUEzaEVBSEVrLzZnSkFBQWdBZUVjQWNDVDlxQXNBQVNBQTRCMEJ3Skgwb3k0QUJJQUFnSGNFQUVmU2o3b0FFQUFDQU40UkFCeEpQK29DUUFBSUFIaEhBSEFrL2FnTEFBRWdBT0FkQWNDUjlLTXVBQVNBQUlCM0JBQkgwbys2QUJBQUFnRGVFUUFjU1QvcUFrQUFDQUI0UndCd0pQMm9Dd0FCSUFEZ0hRSEFrZlNqTGdBRWdBQ0Fkd1FBUjlLUHVnQVFBQUlBM2hFQUhFay82Z0pBQUFnQWVFY0FjQ1Q5cUFzQUFTQUE0QjBCd0pIMG95NEFCSUFBZ0hjRUFFZlNqN29BRUFBQ0FONFJBQnhKUCtvQ1FBQUlBSGhIQUN5UWZtQ044ZHd4VHY5M2dSd0JzRUI2bkFXQUFBRG1FUUFMcE1kWkFBZ0FZQjRCc0VCNm5BV0FBQURtRVFBTHBNZFpBQWdBWUI0QnNFQjZuQVdBQUFEbUVRQUxwTWRaQUFnQVlCNEJzRUI2bkFXQUFBRG1FUUFMcE1kWkFBZ0FZQjRCc0VCNm5BV0FBQURtRVFBTHBNZFpBQWdBWUI0QnNFQjZuQVdBQUFEbUVRQUxwTWRaQUFnQVlCNEJzRUI2bkFXQUFBRG1FUUFMcE1kWkFBZ0FZQjRCc0VCNm5BV0FBQURtRVFBTHBNZFpBQWdBWUI0QnNFQjZuQVdBQUFEbUVRQUxwTWRaQUFnQVlCNEJzRUI2bkFXQUFBRG1FUUFMcE1kWkFBZ0FZQjRCc0VCNm5BV0FBQURtRVFBTHBNZFpBQWdBWUI0QnNFQjZuQVdBQUFEbUVRQUxwTWRaQUFnQVlCNEJzRUI2bkFXQUFBRG1FUUFMcE1kWkFBZ0FZQjRCc0VCNm5BV0FBQURtRVFBTHBNZFpBQWdBWUo3MUFXQ3Nkb3hWK2xBQXRoRUFBa0FBQUJRU0FBSkFBQUFVRWdBQ1FBQUFGQklBQWtBQUFCUVNBQUpBQUFBVUVnQUNRQUFBRkJJQUFrQUFBQlFTQUFKQUFBQVVFZ0FDUUFBQUZCSUFBa0FBQUJRU0FBSkFBQUFVRWdBQ1FBQUFGQklBQWtBQUFCUVNBQUpBQUFBVUVnQUNRQUFBRkJJQUFrQUFBQlFTQUFKQUFBQVVFZ0FDUUFBQUZCSUFBa0FBQUJRU0FBSkFBQUFVRWdBQ1FBQUFGQklBQWtBQUFCUVNBQUpBQUFBVUVnQUNRQUFBRkJJQUFrQUFBQlFTQUFKQUFBQVVFZ0FDUUFBQUZGb2ZBTC85OXRzdjkvUG5ULzVrNlVNQjJFWUFDSUFSMG9jQ3NJMEFFQUFqcEE4RllCc0JJQUJHU0I4S3dEWUNRQUNNa0Q0VWdHMEVnQUFZSVgwb0FOc0lBQUV3UXZwUUFMWVJBQUpnaFBTaEFHd2pBQVRBQ09sREFkaEdBQWlBRWRLSEFyQ05BQkFBSTZRUEJXQWJBU0FBUmtnZkNzQTJBa0FBakpBK0ZJQnRCSUFBR0NGOUtBRGJDQUFCTUVMNlVBQzJFUUFDWUlUMG9RQnNJd0FFd0FqcFF3SFlSZ0FJZ0JIU2h3S3dqUUFRQUNPa0R3VmdHd0VnQUVaSUh3ckFOZ0pBQUl5UVBoU0FiUVNBQUJnaGZTZ0Eyd2dBQVRCQytsQUF0aEVBQW1DRTlLRUFiQ01BQk1BSTZVTUIyRVlBQ0lBUjBvY0NzSTBBRUFBanBBOEZZQnNCSUFCR1NCOEt3RFlDUUFDTWtENFVnRzNXQjBEaW93b09BUUJ3T3dId0FRRWdBQUJ1SndBK0lBQUVBTUR0Qk1BSEJJQUFBTGlkQVBpQUFCQUFBTGNUQUI4UUFBSUE0SFlDNEFNQ1FBQUEzRTRBZkVBQUNBQ0Eyd21BRHdnQUFRQndPd0h3QVFFZ0FBQnVKd0ErSUFBRUFNRHRCTUFIQklBQUFMaWRBUGlBQUJBQUFMY1RBQjhRQUFJQTRIWUM0QU1DUUFBQTNFNEFmRUFBQ0FDQTJ3bUFEd2dBQVFCd093SHdBUUVnQUFCdUp3QStJQUFFQU1EdEJNQUhCSUFBQUxpZEFQaUFBQkFBQUxjVEFCOFFBQUlBNEhZQzRBTUNRQUFBM0U0QWZFQUFDQUNBMndtQUR3Z0FBUUJ3T3dId0FRRWdBQUJ1SndBK0lBQUVBTUR0Qk1BSEJJQUFBTGlkQUZqZ1Z3ZEhRdm9iQTJ3akFCWklqN01BQUpoSEFDeVFIbWNCQURDUEFGZ2dQYzRDQUdBZUFiQkFlcHdGQU1BOEFtQ0I5RGdMQUlCNUJNQUM2WEVXQUFEekNJQUYwdU1zQUFEbUVRQUxwTWRaQUFETUl3QVdTSSt6QUFDWVJ3QXNrQjVuQVFBd2p3QllJRDNPQWdCZ0hnR3dRSHFjQlFEQVBBSmdnZlE0Q3dDQWVRVEFBdWx4RmdBQTh3aUFCZExqTEFBQTVoRUFDNlRIV1FBQXpDTUFGa2lQc3dBQW1FY0FMSkFlWndFQU1JOEFXQ0E5emdJQVlCNEJzRUI2bkFVQXdEd0NZSUgwT0FzQWdIa0V3QUxwY1JZQUFQTUlnQVhTNHl3QUFPWVJBQXVreDFrQUFNd2pBQlpJajdNQUFKaEhBQ3lRSG1jQkFEQ1BBRmdnUGM0Q0FHQWVBYkJBZXB3RkFNQThBb0FqNlNBUUhRRHZDQUNPcE1kWkFBQzhJd0E0a2g1bkFRRHdqZ0RnU0hxY0JRREFPd0tBSStseEZnQUE3d2dBanFUSFdRQUF2Q01BT0pJZVp3RUE4STRBNEVoNm5BVUF3RHNDZ0NQcGNSWUFBTzhJQUk2a3gxa0FBTHdqQURpU0htY0JBUENPQU9CSWVwd0ZBTUE3QW9BajZYRVdBQUR2Q0FDT3BNZFpBQUM4SXdBNGtoNW5BUUR3amdEZ1NIcWNCUURBT3dLQUkrbHhGZ0FBN3dnQWpxVEhXUUFBdkNNQU9KSWVad0VBOEk0QTRFaDZuQVVBd0RzQ2dDUHBjUllBQU84SUFJNmt4MWtBQUx3akFEaVNIbWNCQVBDT0FPQkllcHdGQU1BN0FvQWo2WEVXQUFEdkNBQ09wTWRaQUFDOEl3QTRraDVuQVFEd2pnRGdTSHFjQlFEQU93S0FFZEl4SURpQWJRUUFJNlRIV1FBQTJ3Z0FSa2lQc3dBQXRoRUFqSkFlWndFQWJDTUFHQ0U5emdJQTJFWUFNRUo2bkFVQXNJMEFZSVQwT0FzQVlCc0J3QWpwY1JZQXdEWUNnQkhTNHl3QWdHMEVBQ09reDFrQUFOc0lBRVpJajdNQUFMWVJBSXlRSG1jQkFHd2pBQmdoUGM0Q0FOaEdBREJDZXB3RkFMQ05BR0NFOURnTEFHQWJBY0FJNlhFV0FNQTJBb0FSMHVNc0FJQnRCQUFqcE1kWkFBRGJDQUJHU0krekFBQzJFUUNNa0I1bkFRQnNJd0FZSVQzT0FnRFlSZ0F3UW5xY0JRQ3dqUUJnaFBRNEN3QmdHd0hBQ09seEZnREFOZ0tBRWRMakxBQ0FiUVFBSTZUSFdRQUEyd2dBUmtpUHN3QUF0aEVBakpBZVp3RUFiQ01BR0NFOXpnSUEyRVlBQUVBaEFRQUFoUVFBQUJRU0FBQlFTQUFBUUNFQkFBQ0ZCQUFBRkJJQUFGQklBQUJBSVFFQUFJVUVBQUFVRWdBQVVFZ0FBRUFoQVFBQWhRUUFBQlFTQUFCUVNBQUFRQ0VCQUFDRkJBQUFGQklBQUZCSUFBQkFJUUVBQUlVRUFBQVVFZ0FBVUVnQUFFQWhBUUFBaFFRQUFCUVNBQUJRU0FBQVFDRUJBQUNGQkFBQUZCSUFBRkJJQUFCQUlRRUFBSVVFQUFBVUVnQUFVRWdBQUVBaEFRQUFoUVFBQUJRU0FBQlFTQUFBUUNFQkFBQ0ZCQUFBRkJJQUFGQklBQUJBSVFFQUFJVUVBQUFVRWdBQVVFZ0FBRUFoQVFBQWhRUUFBQlFTQUFCUVNBQUFRQ0VCQUFDRkJBQUFGQklBQUZCSUFBQkFJUUVBQUlVRUFBQVVFZ0FBVUVnQUFFQWhBUUFBaFFRQUFCUVNBQUJRU0FBQVFDRUJBQUNGQkFBQUZCSUFBRkJJQUFCQUlRRUFBSVVFQUFBVUVnQUFVRWdBQUVBaEFRQUFoUVFBQUJRU0FBQlFTQUFBUUNFQkFBQ0ZCQUFBRkJJQUFGQklBQUJBSVFFQUFJVUVBQUFVRWdBQVVFZ0FBRUFoQVFBQWhRUUFBQlFTQUFCUVNBQUFRQ0VCQUFDRkJBQUFGQklBQUZCSUFBQkFJUUVBQUlVRUFBQVVFZ0FBVUVnQUFFQWhBUUFBaFFRQUFCUVNBQUJRU0FBQVFDRUJBQUNGQkFBQUZCSUFBRkJJQUFCQUlRRUFBSVVFQUFBVUVnQUFVRWdBQUVBaEFRQUFoUVFBQUJRU0FBQlFTQUFBUUNFQkFBQ0ZCQUFBRkJJQUFGQklBQUJBSVFFQUFJVUVBQUFVRWdBQVVFZ0FBRUFoQVFBQWhRUUFBQlFTQUFCUVNBQUFRQ0VCQUFDRkJBQUFGQklBQUZCSUFBQkFJUUVBQUlVRUFBQVVFZ0FBVUVnQUFFQWhBUUFBaFFRQUFCUVNBQUJRU0FBQVFDRUJBQUNGQkFBQUZCSUFBRkJJQUFCQUlRRUFBSVhXQndBQThPY1JBQUJRU0FBQVFDRUJBQUNGQkFBQUZCSUFBRkJJQUFCQUlRRUFBSVVFQUFBVUVnQUFVRWdBQUVBaEFRQUFoUVFBQUJRU0FBQlE2SmNIQUFBd2x3QUFnRUlDQUFBS0NRQUFLQ1FBQUtDUUFBQ0FRZ0lBQUFvSkFBQW9KQUFBb0pBQUFJQkNBZ0FBQ2drQUFDZ2tBQUNna0FBQWdFTC9BL0VKZW1Dd1FuV3JBQUFBQUVsRlRrU3VRbUNDIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifQogIF0KfQ==">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACt0lEQVR4nO3SsU1kMQBF0RESGxAQIYraVihpCiOZIqYDEPmuZMkf2XP/CU5s+/leXv48fUHFZfUF4EiCJkXQpAialH8G/fH3DbYnaFIETYqgSRE0KVNBv78+n8rtdjvU6vc8OkFPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBP0fR4f69XkZInxBCxpBC7pJ0IJOEbSgUwQt6BRBCzpF0IJOEbSgUwQt6JTTBb0qVEELWtCCFrSgz03Qgk4RtKBTBC3oFEELOkXQgk4RtKBTBC3olEzQlVAFLWhBI2hBNwla0CmCFnSKoAWdImhBpwha0CmCFnSKoAWdsn3QlVBXf/RZCFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKYcHLSwELWgELWgEvXxwBC1oBC3ocxI0KYImRdCkCJqUw4O+Xq9D7vf7EqsHR9CCRtCCPidBkyJoUgRNiqBJETQpgiZF0KQcHvTowavCXz04ghY0wwRNiqBJETQpgiZF0KQImhRBkyJoUpYFPWo0/FGrB+d3CZoUQZMiaFIETYqgSRE0KYImRdCkCJqU7YMeJXx+CFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKZmgRwm/TdCCThG0oFMELegUQQs6RdCCThG0oFMELegUQQs6RdCCTjld0LQJmhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImpTDg4bdCJoUQZMiaFIETcpw0PCoBE2KoEkRNCmCJuUbxfKDUBXPXUwAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" sizes="152x152" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACt0lEQVR4nO3SsU1kMQBF0RESGxAQIYraVihpCiOZIqYDEPmuZMkf2XP/CU5s+/leXv48fUHFZfUF4EiCJkXQpAialH8G/fH3DbYnaFIETYqgSRE0KVNBv78+n8rtdjvU6vc8OkFPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBP0fR4f69XkZInxBCxpBC7pJ0IJOEbSgUwQt6BRBCzpF0IJOEbSgUwQt6JTTBb0qVEELWtCCFrSgz03Qgk4RtKBTBC3oFEELOkXQgk4RtKBTBC3olEzQlVAFLWhBI2hBNwla0CmCFnSKoAWdImhBpwha0CmCFnSKoAWdsn3QlVBXf/RZCFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKYcHLSwELWgELWgEvXxwBC1oBC3ocxI0KYImRdCkCJqUw4O+Xq9D7vf7EqsHR9CCRtCCPidBkyJoUgRNiqBJETQpgiZF0KQcHvTowavCXz04ghY0wwRNiqBJETQpgiZF0KQImhRBkyJoUpYFPWo0/FGrB+d3CZoUQZMiaFIETYqgSRE0KYImRdCkCJqU7YMeJXx+CFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKZmgRwm/TdCCThG0oFMELegUQQs6RdCCThG0oFMELegUQQs6RdCCTjld0LQJmhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImpTDg4bdCJoUQZMiaFIETcpw0PCoBE2KoEkRNCmCJuUbxfKDUBXPXUwAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" sizes="120x120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACt0lEQVR4nO3SsU1kMQBF0RESGxAQIYraVihpCiOZIqYDEPmuZMkf2XP/CU5s+/leXv48fUHFZfUF4EiCJkXQpAialH8G/fH3DbYnaFIETYqgSRE0KVNBv78+n8rtdjvU6vc8OkFPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBP0fR4f69XkZInxBCxpBC7pJ0IJOEbSgUwQt6BRBCzpF0IJOEbSgUwQt6JTTBb0qVEELWtCCFrSgz03Qgk4RtKBTBC3oFEELOkXQgk4RtKBTBC3olEzQlVAFLWhBI2hBNwla0CmCFnSKoAWdImhBpwha0CmCFnSKoAWdsn3QlVBXf/RZCFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKYcHLSwELWgELWgEvXxwBC1oBC3ocxI0KYImRdCkCJqUw4O+Xq9D7vf7EqsHR9CCRtCCPidBkyJoUgRNiqBJETQpgiZF0KQcHvTowavCXz04ghY0wwRNiqBJETQpgiZF0KQImhRBkyJoUpYFPWo0/FGrB+d3CZoUQZMiaFIETYqgSRE0KYImRdCkCJqU7YMeJXx+CFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKZmgRwm/TdCCThG0oFMELegUQQs6RdCCThG0oFMELegUQQs6RdCCTjld0LQJmhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImpTDg4bdCJoUQZMiaFIETcpw0PCoBE2KoEkRNCmCJuUbxfKDUBXPXUwAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACt0lEQVR4nO3SsU1kMQBF0RESGxAQIYraVihpCiOZIqYDEPmuZMkf2XP/CU5s+/leXv48fUHFZfUF4EiCJkXQpAialH8G/fH3DbYnaFIETYqgSRE0KVNBv78+n8rtdjvU6vc8OkFPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBP0fR4f69XkZInxBCxpBC7pJ0IJOEbSgUwQt6BRBCzpF0IJOEbSgUwQt6JTTBb0qVEELWtCCFrSgz03Qgk4RtKBTBC3oFEELOkXQgk4RtKBTBC3olEzQlVAFLWhBI2hBNwla0CmCFnSKoAWdImhBpwha0CmCFnSKoAWdsn3QlVBXf/RZCFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKYcHLSwELWgELWgEvXxwBC1oBC3ocxI0KYImRdCkCJqUw4O+Xq9D7vf7EqsHR9CCRtCCPidBkyJoUgRNiqBJETQpgiZF0KQcHvTowavCXz04ghY0wwRNiqBJETQpgiZF0KQImhRBkyJoUpYFPWo0/FGrB+d3CZoUQZMiaFIETYqgSRE0KYImRdCkCJqU7YMeJXx+CFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKZmgRwm/TdCCThG0oFMELegUQQs6RdCCThG0oFMELegUQQs6RdCCTjld0LQJmhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImpTDg4bdCJoUQZMiaFIETcpw0PCoBE2KoEkRNCmCJuUbxfKDUBXPXUwAAAAASUVORK5CYII=">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Quest Log">
+<meta name="theme-color" content="#0a0805">
+<title>Quest Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;background:#000;}
+#root{background:#000;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:10px 4px 40px;font-family:'MedievalSharp',Georgia,serif;position:relative;overflow-x:hidden;}
+#root::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 30% 20%,#1a2a3a 0%,transparent 55%),radial-gradient(ellipse at 70% 80%,#0e1a28 0%,transparent 55%),linear-gradient(180deg,#0a1018 0%,#0d1520 50%,#080e18 100%);z-index:0;}
+#root::after{content:'';position:fixed;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(255,255,255,0.012) 31px,rgba(255,255,255,0.012) 32px),repeating-linear-gradient(90deg,transparent,transparent 31px,rgba(255,255,255,0.012) 31px,rgba(255,255,255,0.012) 32px);z-index:0;pointer-events:none;}
+.wrap{position:relative;z-index:1;width:100%;max-width:640px;display:flex;flex-direction:column;gap:8px;}
+.qframe{width:100%;background:#1a1510;border:4px solid #0a0805;border-radius:4px;box-shadow:inset 0 0 0 1px #3d2f1e,inset 0 0 0 2px #1a1208,0 2px 12px rgba(0,0,0,0.9);overflow:hidden;}
+.q-titlebar{background:linear-gradient(180deg,#2a1f12 0%,#1a1208 60%,#120d07 100%);padding:5px 10px 4px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #3d2f1e;position:relative;}
+.q-titlebar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#8b6020 30%,#c8960a 50%,#8b6020 70%,transparent);}
+.q-titlename{font-family:'MedievalSharp',Georgia,serif;font-size:12px;color:#e8d070;text-shadow:1px 1px 0 #000,0 0 6px rgba(200,150,10,0.4);letter-spacing:0.5px;}
+.q-titlesub{font-size:10px;color:#a08040;font-family:Georgia,serif;font-style:italic;}
+.q-body{display:flex;background:#2d2010;min-height:260px;}
+.q-portrait-col{width:100px;min-width:100px;background:#1e1509;border-right:2px solid #0d0a06;display:flex;flex-direction:column;align-items:center;padding:8px 6px;gap:4px;}
+.portrait-box{width:80px;height:80px;border:2px solid #5a4020;border-top-color:#8a6030;border-left-color:#8a6030;border-bottom-color:#2a1a08;border-right-color:#2a1a08;background:#0a0806;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.portrait-box::after{content:'';position:absolute;inset:2px;box-shadow:inset 0 0 8px rgba(0,0,0,0.8);pointer-events:none;z-index:1;}
+.portrait-box canvas{image-rendering:pixelated;image-rendering:crisp-edges;width:72px;height:72px;}
+.p-name{font-family:'MedievalSharp',serif;font-size:9px;color:#c8960a;text-align:center;line-height:1.3;text-shadow:1px 1px 0 #000;}
+.p-role{font-size:9px;color:#7a5a28;font-family:Georgia,serif;font-style:italic;text-align:center;}
+.p-divider{width:75%;height:1px;background:linear-gradient(90deg,transparent,#5a3e18,transparent);margin:2px 0;}
+.q-text-col{flex:1;background:#2d2010;padding:10px 12px 8px;}
+.q-heading{font-family:'MedievalSharp',Georgia,serif;font-size:13px;color:#ffd040;text-shadow:1px 1px 2px rgba(0,0,0,0.9),0 0 8px rgba(220,160,0,0.3);margin-bottom:6px;line-height:1.3;}
+.q-text{font-family:Georgia,'Times New Roman',serif;font-size:12px;color:#c8a870;line-height:1.6;text-shadow:1px 1px 0 rgba(0,0,0,0.7);}
+.q-section-lbl{font-family:'MedievalSharp',Georgia,serif;font-size:11px;color:#ffd040;text-shadow:1px 1px 2px rgba(0,0,0,0.9);margin:8px 0 4px;}
+.q-obj{font-family:Georgia,serif;font-size:11.5px;color:#d4b882;line-height:1.5;padding-left:14px;position:relative;text-shadow:1px 1px 0 rgba(0,0,0,0.6);}
+.q-obj::before{content:'•';position:absolute;left:4px;color:#8a6820;}
+.q-divider{height:1px;background:linear-gradient(90deg,transparent,#6a4e18,#c8960a,#6a4e18,transparent);margin:7px 0;position:relative;}
+.q-divider::before,.q-divider::after{content:'✦';position:absolute;top:50%;transform:translateY(-50%);color:#8a6020;font-size:7px;line-height:1;}
+.q-divider::before{left:0;}.q-divider::after{right:0;}
+.q-reward-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px;}
+.q-reward{display:flex;align-items:center;gap:4px;background:#1e1509;border:1px solid #3d2f1e;border-top-color:#5a4020;border-left-color:#5a4020;padding:3px 7px;font-size:11px;color:#c8a060;font-family:Georgia,serif;}
+.q-reward-xp{color:#60c800;font-family:'MedievalSharp',serif;font-size:11px;}
+.q-footer{background:linear-gradient(180deg,#120d07 0%,#1a1208 100%);border-top:1px solid #3d2f1e;padding:7px 10px;display:flex;align-items:center;justify-content:space-between;position:relative;}
+.q-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#8b6020 30%,#c8960a 50%,#8b6020 70%,transparent);}
+.footer-tip{font-size:10px;color:#6a4e28;font-family:Georgia,serif;font-style:italic;}
+.wow-accept,.wow-decline{font-family:'MedievalSharp',Georgia,serif;font-size:11px;padding:6px 18px;border-radius:2px;cursor:pointer;letter-spacing:0.3px;border:1px solid;transition:all 0.12s;text-shadow:1px 1px 0 rgba(0,0,0,0.8);}
+.wow-accept{background:linear-gradient(180deg,#2a3d0a,#1a2808);border-color:#4a6a14;border-top-color:#6a9a20;border-left-color:#6a9a20;color:#80d020;}
+.wow-accept:active{background:linear-gradient(180deg,#3a5010,#283a10);color:#a0f030;}
+.wow-accept:disabled{opacity:0.4;cursor:default;}
+.wow-decline{background:linear-gradient(180deg,#3d1010,#280808);border-color:#6a1414;border-top-color:#9a2020;border-left-color:#9a2020;color:#e04040;}
+.wow-decline:active{background:linear-gradient(180deg,#501414,#380a0a);color:#f06060;}
+.wow-decline:disabled{opacity:0.4;cursor:default;}
+.xp-section{background:#120d07;border-top:1px solid #0a0805;padding:5px 10px 6px;}
+.xp-row{display:flex;justify-content:space-between;font-size:10px;color:#7a5a28;font-family:'MedievalSharp',serif;margin-bottom:3px;}
+.xp-track{height:12px;background:#060402;border:1px solid #0a0805;border-bottom-color:#2a1e0e;border-right-color:#2a1e0e;position:relative;overflow:hidden;}
+.xp-fill{height:100%;background:linear-gradient(180deg,#50a000 0%,#308000 50%,#206000 100%);transition:width 0.9s cubic-bezier(0.25,0.46,0.45,0.94);position:relative;}
+.xp-fill::after{content:'';position:absolute;top:1px;left:0;right:0;height:3px;background:rgba(180,255,80,0.25);}
+.xp-txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#c0f060;font-family:'MedievalSharp',serif;text-shadow:1px 1px 0 #000;z-index:1;}
+.qlist-cat-lbl{font-family:'MedievalSharp',serif;font-size:10px;color:#8a6020;padding:5px 10px 2px;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid #1a1208;}
+.qlist-row{display:flex;align-items:center;gap:8px;padding:8px 10px;cursor:pointer;border-left:3px solid transparent;border-bottom:1px solid #1a1208;transition:background 0.1s;}
+.qlist-row:active{background:rgba(200,150,10,0.07);border-left-color:#6a4e18;}
+.qlist-row.sel{background:rgba(200,150,10,0.11);border-left-color:#ffd040;}
+.qlist-row.done{opacity:0.35;pointer-events:none;}
+.qr-icon{width:28px;height:28px;flex-shrink:0;}
+.qr-icon canvas{width:28px;height:28px;image-rendering:pixelated;image-rendering:crisp-edges;}
+.qr-name{flex:1;font-size:12px;font-family:Georgia,serif;text-shadow:1px 1px 0 rgba(0,0,0,0.7);}
+.qr-name.common{color:#c8a870;}.qr-name.uncommon{color:#40cc10;}.qr-name.rare{color:#5599ee;}.qr-name.epic{color:#c070f0;}.qr-name.legendary{color:#ff9010;}
+.qr-xp{font-size:11px;color:#60c800;font-family:'MedievalSharp',serif;flex-shrink:0;}
+.qr-done{font-size:10px;color:#408010;font-family:'MedievalSharp',serif;}
+.gt-body{background:#2d2010;padding:8px 10px;display:flex;align-items:center;gap:10px;}
+.gt-icon{width:32px;height:32px;flex-shrink:0;}
+.gt-icon canvas{width:32px;height:32px;image-rendering:pixelated;image-rendering:crisp-edges;}
+.gt-info{flex:1;}
+.gt-title-lbl{font-family:'MedievalSharp',serif;font-size:11px;color:#ffd040;text-shadow:1px 1px 2px #000;letter-spacing:0.5px;}
+.gt-sublbl{font-size:10px;color:#7a5a28;font-family:Georgia,serif;margin-top:1px;}
+.gt-track{height:9px;background:#060402;border:1px solid #0a0805;border-bottom-color:#2a1e0e;overflow:hidden;margin-top:4px;}
+.gt-fill{height:100%;background:linear-gradient(180deg,#c85000,#902000);transition:width 0.9s ease;}
+.gt-num{font-family:'MedievalSharp',serif;font-size:18px;color:#ff8020;text-shadow:1px 1px 2px #000;}
+.gt-elbl{font-size:9px;color:#5a3a18;font-family:'MedievalSharp',serif;letter-spacing:1px;}
+.ftab{font-family:'MedievalSharp',Georgia,serif;font-size:10px;padding:4px 10px;background:linear-gradient(180deg,#2a1f12,#1a1208);border:1px solid #3d2f1e;border-top-color:#5a4020;border-left-color:#5a4020;color:#a08040;cursor:pointer;letter-spacing:0.3px;transition:all 0.12s;}
+.ftab.active{background:linear-gradient(180deg,#3a2d18,#2a1e10);color:#ffd040;border-top-color:#8a6020;border-left-color:#8a6020;}
+.toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-80px);background:#1a1208;border:2px solid #c8960a;border-radius:2px;padding:9px 18px;font-family:'MedievalSharp',serif;font-size:12px;color:#ffd040;text-align:center;z-index:999;transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);white-space:nowrap;text-shadow:1px 1px 0 #000;box-shadow:0 4px 16px rgba(0,0,0,0.9);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.lvlup-wrap{width:100%;max-width:640px;overflow:hidden;max-height:0;transition:max-height 0.5s ease;position:relative;z-index:2;}
+.lvlup-wrap.show{max-height:100px;}
+.lvlup-box{background:#1a1208;border:2px solid #ffd040;padding:14px;text-align:center;margin-bottom:8px;}
+.lvlup-txt{font-family:'MedievalSharp',serif;font-size:20px;color:#ffd040;text-shadow:1px 1px 4px rgba(200,150,0,0.6);letter-spacing:2px;}
+.lvlup-sub{font-size:12px;color:#c8a060;font-family:Georgia,serif;margin-top:3px;}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+<div class="lvlup-wrap" id="lvlup"><div class="lvlup-box"><div class="lvlup-txt">— Level Up! —</div><div class="lvlup-sub" id="lvlup-sub">You have grown stronger.</div></div></div>
+
+<div id="root">
+<div class="wrap">
+
+<div class="qframe">
+  <div class="q-titlebar">
+    <div><div class="q-titlename" id="char-name-lbl">New Adventurer</div><div class="q-titlesub" id="char-tier-lbl">Tier I — The Awakening</div></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="text-align:right;"><div style="font-family:'MedievalSharp',serif;font-size:9px;color:#6a4e28;letter-spacing:1px;">TOTAL XP</div><div style="font-family:'MedievalSharp',serif;font-size:12px;color:#c8960a;text-shadow:1px 1px 0 #000;" id="total-xp">0</div></div>
+      <div style="background:#120d07;border:1px solid #3d2f1e;border-top-color:#5a4020;border-left-color:#5a4020;padding:4px 10px;text-align:center;">
+        <div style="font-family:'MedievalSharp',serif;font-size:20px;color:#ffd040;line-height:1;text-shadow:1px 1px 2px #000;" id="lvl-num">1</div>
+        <div style="font-size:9px;color:#6a4e28;font-family:'MedievalSharp',serif;letter-spacing:1px;">LEVEL</div>
+      </div>
+    </div>
+  </div>
+  <div style="background:#2d2010;padding:8px 10px 6px;display:flex;align-items:center;gap:10px;">
+    <div id="char-avatar-wrap" style="width:36px;height:36px;flex-shrink:0;"></div>
+    <div style="flex:1;">
+      <div style="font-family:'MedievalSharp',serif;font-size:12px;color:#ffd040;text-shadow:1px 1px 2px #000;" id="char-class-lbl">Apprentice Adventurer</div>
+      <div style="font-size:10px;color:#7a5a28;font-family:Georgia,serif;font-style:italic;" id="char-flavor-lbl">The hardest step is always the first.</div>
+    </div>
+  </div>
+  <div class="xp-section">
+    <div class="xp-row"><span>Experience</span><span id="xp-lbl">0 / 300 XP</span></div>
+    <div class="xp-track"><div class="xp-fill" id="xp-fill" style="width:0%"></div><div class="xp-txt" id="xp-pct">0%</div></div>
+  </div>
+</div>
+
+<div class="qframe">
+  <div class="q-titlebar"><div class="q-titlename">Game Time Reward</div></div>
+  <div class="gt-body">
+    <div class="gt-icon"><canvas id="icon-gametime" width="16" height="16"></canvas></div>
+    <div class="gt-info">
+      <div class="gt-title-lbl">Reward Meter</div>
+      <div class="gt-sublbl" id="gt-sub">Earn 500 XP to unlock 1 hour of game time</div>
+      <div class="gt-track"><div class="gt-fill" id="gt-fill" style="width:0%"></div></div>
+    </div>
+    <div style="flex-shrink:0;text-align:right;"><div class="gt-num" id="gt-hrs">0h</div><div class="gt-elbl">EARNED</div></div>
+  </div>
+</div>
+
+<div class="qframe">
+  <div class="q-titlebar"><div><div class="q-titlename" id="npc-name">Questmaster Aldric</div><div class="q-titlesub" id="npc-role">Quest Giver</div></div></div>
+  <div class="q-body">
+    <div class="q-portrait-col">
+      <div class="portrait-box"><canvas id="portrait-canvas" width="18" height="18"></canvas></div>
+      <div class="p-divider"></div>
+      <div class="p-name" id="p-name">Questmaster Aldric</div>
+      <div class="p-role" id="p-role">Quest Giver</div>
+      <div class="p-divider"></div>
+      <div style="font-family:'MedievalSharp',serif;font-size:10px;color:#c8960a;text-align:center;text-shadow:1px 1px 0 #000;" id="p-lvl">Lv 1</div>
+      <div style="font-size:9px;color:#5a3e18;font-family:Georgia,serif;text-align:center;">Hero</div>
+    </div>
+    <div class="q-text-col">
+      <div class="q-heading" id="q-title">Select a quest from the board below</div>
+      <div class="q-divider"></div>
+      <div class="q-text" id="q-desc">Greetings, adventurer. The realm has need of those willing to act. Select a quest from the board and prove yourself worthy. The path to greatness begins with a single deed — however uncomfortable.</div>
+      <div id="q-obj-wrap" style="display:none;"><div class="q-section-lbl">Quest Objectives</div><div id="q-obj-list"></div></div>
+      <div id="q-reward-wrap" style="display:none;"><div class="q-divider" style="margin-top:8px;"></div><div class="q-section-lbl">Rewards</div><div class="q-reward-row" id="q-rewards"></div></div>
+    </div>
+  </div>
+  <div class="q-footer">
+    <div class="footer-tip" id="footer-tip">Tap a quest to view details</div>
+    <div style="display:flex;gap:6px;">
+      <button class="wow-accept" id="btn-accept" disabled onclick="acceptQuest()">Accept</button>
+      <button class="wow-decline" id="btn-decline" disabled onclick="declineQuest()">Decline</button>
+    </div>
+  </div>
+</div>
+
+<div class="qframe">
+  <div class="q-titlebar">
+    <div><div class="q-titlename">Available Quests</div><div class="q-titlesub" id="board-sub">Tier I — Beginner Challenges</div></div>
+    <div style="display:flex;gap:4px;">
+      <button class="ftab active" id="f-all" onclick="setFilter('all')">All</button>
+      <button class="ftab" id="f-fitness" onclick="setFilter('fitness')">Fitness</button>
+      <button class="ftab" id="f-mental" onclick="setFilter('mental')">Mind</button>
+      <button class="ftab" id="f-life" onclick="setFilter('life')">Life</button>
+    </div>
+  </div>
+  <div id="qlist"></div>
+  <div style="background:#1a1208;border-top:1px solid #0a0805;padding:5px 10px;font-size:10px;color:#5a3e18;font-family:Georgia,serif;font-style:italic;text-align:center;" id="next-unlock">Level up to unlock harder challenges</div>
+</div>
+
+</div>
+</div>
+
+<script>
+const SK='wowv7';
+const XP_PER_HOUR=500;
+const LEVEL_XP=[0,300,700,1300,2200,3400,5000,7200,10000,13500,18000];
+function xpNeeded(l){return LEVEL_XP[Math.min(l,LEVEL_XP.length-1)]||l*2000;}
+
+const TIERS=[
+  {minLvl:1,name:"The Awakening",avatarKey:"sprout",cls:"Apprentice Adventurer",flavor:"The hardest step is always the first."},
+  {minLvl:3,name:"The Rising",avatarKey:"sword",cls:"Journeyman Hero",flavor:"The path grows steeper. Good."},
+  {minLvl:5,name:"The Proving",avatarKey:"shield",cls:"Seasoned Warrior",flavor:"Comfort is behind you now."},
+  {minLvl:7,name:"The Crucible",avatarKey:"flame",cls:"Champion of Will",flavor:"Most would have stopped by now."},
+  {minLvl:9,name:"The Ascension",avatarKey:"crown",cls:"Legendary Conqueror",flavor:"Few ever reach this path."},
+];
+function getTier(lvl){let t=TIERS[0];for(const x of TIERS)if(lvl>=x.minLvl)t=x;return t;}
+
+function hex(h){const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return[r,g,b,255];}
+
+const PALETTES={
+  bed:{A:hex('#c8a060'),B:hex('#8a6030'),C:hex('#e8d0a0'),D:hex('#4a3020'),E:hex('#d4b880'),F:hex('#f5f0e0'),G:hex('#6060c0'),H:hex('#a0a0f0')},
+  shower:{A:hex('#5599cc'),B:hex('#88ccee'),C:hex('#e8e8e8'),D:hex('#aaddff'),E:hex('#336699'),F:hex('#c8e8f8'),G:hex('#ffffff'),H:hex('#77bbdd')},
+  food:{A:hex('#d4782a'),B:hex('#f0a040'),C:hex('#70b030'),D:hex('#c83030'),E:hex('#f8d060'),F:hex('#8b4513'),G:hex('#ffdd88'),H:hex('#e05010')},
+  walk:{A:hex('#5588cc'),B:hex('#88bbff'),C:hex('#e8d090'),D:hex('#c87830'),E:hex('#70a040'),F:hex('#a07040'),G:hex('#ffeecc'),H:hex('#3366aa')},
+  plan:{A:hex('#f5f0d8'),B:hex('#c8a060'),C:hex('#3a2a10'),D:hex('#d4b870'),E:hex('#8b6020'),F:hex('#e8d890'),G:hex('#555500'),H:hex('#ffd040')},
+  phone:{A:hex('#cc3333'),B:hex('#333333'),C:hex('#555555'),D:hex('#ff4444'),E:hex('#222222'),F:hex('#ff6666'),G:hex('#888888'),H:hex('#aaaaaa')},
+  run:{A:hex('#e85020'),B:hex('#f8a860'),C:hex('#f0f0f0'),D:hex('#5588cc'),E:hex('#c0402a'),F:hex('#ffcc88'),G:hex('#88aadd'),H:hex('#333333')},
+  clean:{A:hex('#44aacc'),B:hex('#88ddee'),C:hex('#f0f0f0'),D:hex('#dddddd'),E:hex('#2288aa'),F:hex('#aaeeff'),G:hex('#ffffff'),H:hex('#cccccc')},
+  book:{A:hex('#cc3333'),B:hex('#f5f0d8'),C:hex('#888840'),D:hex('#e8d890'),E:hex('#aa2222'),F:hex('#ffffff'),G:hex('#555500'),H:hex('#333300')},
+  cook:{A:hex('#c84020'),B:hex('#888888'),C:hex('#dddddd'),D:hex('#f0a030'),E:hex('#70b040'),F:hex('#ffcc00'),G:hex('#aaaaaa'),H:hex('#555555')},
+  journal:{A:hex('#4466aa'),B:hex('#f5f0d8'),C:hex('#c8a060'),D:hex('#e8d890'),E:hex('#334488'),F:hex('#ffd040'),G:hex('#888840'),H:hex('#555500')},
+  gym:{A:hex('#888888'),B:hex('#cccccc'),C:hex('#555555'),D:hex('#e85020'),E:hex('#333333'),F:hex('#dddddd'),G:hex('#ff6030'),H:hex('#444444')},
+  deeprun:{A:hex('#e85020'),B:hex('#f8c080'),C:hex('#5588cc'),D:hex('#c84000'),E:hex('#88aadd'),F:hex('#ffddaa'),G:hex('#3355aa'),H:hex('#333333')},
+  focus:{A:hex('#cc9900'),B:hex('#f5f0d8'),C:hex('#4466aa'),D:hex('#ffd040'),E:hex('#334488'),F:hex('#ffffff'),G:hex('#8866aa'),H:hex('#553399')},
+  social:{A:hex('#44aa44'),B:hex('#88dd88'),C:hex('#f0f0f0'),D:hex('#228822'),E:hex('#aaeebb'),F:hex('#ffffff'),G:hex('#336633'),H:hex('#555555')},
+  warrior:{A:hex('#888888'),B:hex('#e85020'),C:hex('#cccccc'),D:hex('#ffaa00'),E:hex('#555555'),F:hex('#ff6030'),G:hex('#ffd040'),H:hex('#333333')},
+  dawn:{A:hex('#ff8800'),B:hex('#ffdd44'),C:hex('#cc4400'),D:hex('#ffeeaa'),E:hex('#884400'),F:hex('#ffcc00'),G:hex('#663300'),H:hex('#222222')},
+  mastery:{A:hex('#8844cc'),B:hex('#cc88ff'),C:hex('#f5f0d8'),D:hex('#553388'),E:hex('#aa55ee'),F:hex('#ffffff'),G:hex('#ffd040'),H:hex('#333333')},
+  digital:{A:hex('#cc3333'),B:hex('#333333'),C:hex('#ff4444'),D:hex('#222222'),E:hex('#884444'),F:hex('#555555'),G:hex('#ff0000'),H:hex('#888888')},
+  gauntlet:{A:hex('#ffaa00'),B:hex('#ff6600'),C:hex('#ffdd44'),D:hex('#cc4400'),E:hex('#ffd040'),F:hex('#ffffff'),G:hex('#884400'),H:hex('#333333')},
+  monk:{A:hex('#8844cc'),B:hex('#ffd040'),C:hex('#553388'),D:hex('#ffeeaa'),E:hex('#cc88ff'),F:hex('#ffffff'),G:hex('#aa7700'),H:hex('#333333')},
+  sprout:{A:hex('#40a020'),B:hex('#70cc40'),C:hex('#2a7010'),D:hex('#a0d060'),E:hex('#884400'),F:hex('#c8a060'),G:hex('#50c028'),H:hex('#1a5008')},
+  sword:{A:hex('#cccccc'),B:hex('#888888'),C:hex('#eeeeee'),D:hex('#c8960a'),E:hex('#ffd040'),F:hex('#ffffff'),G:hex('#aaaaaa'),H:hex('#555555')},
+  shield:{A:hex('#3355aa'),B:hex('#88aadd'),C:hex('#c8960a'),D:hex('#ffd040'),E:hex('#224488'),F:hex('#aabbee'),G:hex('#ffffff'),H:hex('#333333')},
+  flame:{A:hex('#ff6600'),B:hex('#ffaa00'),C:hex('#ff3300'),D:hex('#ffdd44'),E:hex('#cc4400'),F:hex('#ffee88'),G:hex('#ff0000'),H:hex('#883300')},
+  crown:{A:hex('#ffd040'),B:hex('#c8960a'),C:hex('#ffee88'),D:hex('#884400'),E:hex('#ffaa00'),F:hex('#ffffff'),G:hex('#aa7700'),H:hex('#333333')},
+  gametime:{A:hex('#3355aa'),B:hex('#88aadd'),C:hex('#ffd040'),D:hex('#c8960a'),E:hex('#224488'),F:hex('#aabbee'),G:hex('#ffffff'),H:hex('#ff6600')},
+};
+
+const ICONS={
+  bed:['................','..DDDDDDDDDDDD..','.DAAAAAAAAAAAAD.','.DABBBBBBBBBBD.','.DABBCCCCBBBD..','.DABBCCCCBBBD..','.DABBBBBBBBBBD.','.DAAAAAAAAAAAAD.','.DEEEEEEEEEEEEED','.DEFFFFFFFFFFFED','.DEFFFFFFFFFFFED','.DEFFFFFFFFFFFED','.DDDDDDDDDDDDDD.','..D..........D..','..D..........D..','................'],
+  shower:['....EEEEEEE.....','...EAAAAAAE.....','...EAAAAAAE.....','....EEEEEEE.....','........A.......','......AAA.......','....AAAAA.......','.....CCCCCCC....','...CCGGGGGCC....','...CGGGGGGGC....','...CGGGGGGGC....','...CCGGGGGCC....','....CCCCCCC.....','..B...B...B.....','B.....B.....B...','B.....B.....B...'],
+  food:['................','......CCC.......','...CCCCC........','....CCCCCCC.....','...CCGGGGGCC....','..CCGGGGGGGCC...','..CBGGGGGGGBC...','..CBHHHHHHHBC...','...CBHHHHHHBC...','....CBBBBBBC....','....BBBBBB......','....BBBB........','....FFFFFFFF....','....FBBBBBBF....','....FFFFFFFF....','................'],
+  walk:['....AAAA........','...ABBBBA.......','...ABBBBA.......','....AAAA........','....ACCA........','...AACCAA.......','..AAACCAAA......','.AAAACCAAAA.....','....ACCAA.......','....ACCA........','...AACCA........','..AAACCA........','...EACCAE.......','..EEACCAEE......','..E.ACCA.E......','....ACCA........'],
+  plan:['...EEEEEEEEE....','..EBBBBBBBBE....','..EBAAAAAAAAABE.','.EBAFFFFFFFFBE..','.EBAGGGGGGGABE..','.EBAFFFFFFFFBE..','.EBAGGGGGGGABE..','.EBAFFFFFFFFBE..','.EBAGGGGGGGABE..','.EBAFFFFFFFFBE..','.EBAGGGGGGGABE..','.EBAFFFFFFFFBE..','.EBAAAAAAAAABE.','..EBBBBBBBBE....','...EEEEEEEEE....','................'],
+  phone:['....EEEEE.......','...EBBBBBE......','..EBCCCCCBE.....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCAAAACBE....','..EBCCCCCBE.....','...EBBBBBBE.....','....EFFFFF......','....DAAD........','................'],
+  run:['....AAAA........','...ABBBBA.......','...ABBBBA.......','....AAAA........','....ACCA........','...AADCCAA......','..ADDACCAAA.....','....DDACCAAAA...','..DDDACCA.......','...DDACCA.......','....DACCA.......','......ACCA......','....AACCA.......','...AAACCA.......','..EAAA.CAEEE....','................'],
+  clean:['........EEEE....','......EAAE......','......EAAAAAE...','....EAAAAAAE....','....EAAAAAAE....','...EAAAAAAE.....','..EAAAAAAE......','.EAAAAAAE.......','EAAAAAAE........','CAAAAAAAE.......','CCCBBBBBBH......','.CCBFFFFBH......','..CBFFFFBH......','...CBBBBBH......','....HHHHH.......','................'],
+  book:['..EEEEEEEEEE....','..EAABBBBBBAE...','..EABBBBBBBAE...','.EABCCCCCCAE....','.EABCCCCCCAE....','.EABCCCCCCAE....','.EABCCCCCCAE....','.EABCCCCCCAE....','.EABCCCCCCAE....','.EABCCCCCCAE....','.EABCCCCCCAE....','..EABBBBBBBAE..','..EAABBBBBBAE..','...EEEEEEEEEE..','................','................'],
+  cook:['....AAAAA.......','...AAAAAAA......','..AABBBBBAA.....','..ABFFFFFBA.....','..ABFFFFFBA.....','..AABBBBBAA.....','...AAAAAAA......','....GGGGG.......','....GGGGG.......','..HHHHHHHHH.....','..HHDDDDDDDDHH.','.HHDDDDDDDDHH..','..HHHHHHHHH.....','....EEEEE.......','....EEEEE.......','................'],
+  journal:['..EEEEEEEEE.....','..EAAAAAAAAE....','..EAFFFFFFFAE...','.EAFFFFFFFAE....','.EAFFFFFFFAE....','.EAFFFGGGFAE....','.EAFFFGGGFAE....','.EAFFFFFFFAE....','.EAFFFFFFFAE....','.EAFFFFFFFAE....','.EAFFFFFFFAE....','.EAFFFFFFFAE....','..EAAAAAAAAE....','...EEEEEEEEE....','....BBBBB.......','....BBBBB.......'],
+  gym:['..H...H.........','..EHH.HHE.......','EEHHHHHE........','.EHHHHHE........','..HGGGH.........','..HGGGH.........','..HGGGH.........','..DHHHHD........','DDHHHHHDD.......','..DHHHHD........','..HFFH..........','..HFFH..........','..H..H..........','..H..H..........','..H..H..........','................'],
+  deeprun:['....AAAA........','...ABBBBA.......','...ABBBBA.......','....AAAA........','....ACCA........','..HDACCADH......','.HDDACCADDH.....','HDDDACCADDDH....','..HDDACCADDH....','...HDACCADH.....','....ACCA........','....ACCA........','...EACCEEE......','..EEACCAEEE.....','..E.ACCA.E......','................'],
+  focus:['....AAAAA.......','...ABBBBBA......','..ABBCCCBBA.....','..ABBCECCCBBA...','..ABCEEECCCBA...','.ABCEEECCCBA...','..ABBCCCCCBBA..','...ABBBBBBBA....','....AFFFFFA.....','....HFFFH.......','....HFFFH.......','....HFFFH.......','....HFFFH.......','...HHFFFHH......','..HHHHFHHHH.....','................'],
+  social:['....AAAA........','...ABBBBA.......','...ABBBBA.......','....AAAA........','...ACCCA........','..AACCCA........','.DDDDDDD........','DDDDDDDDD.......','..DDDDDDD.......','..AACCCA........','...ACCCA........','..AAADAAA.......','..AAADDDAAA.....','AAADDDDDAAA.....','..AAADDDAAA.....','...AAADAAA......'],
+  warrior:['..H...H.........','..EHH.HHE.......','EEHHBHHE........','.EHBBBHE........','..HBBBH.........','..GHBBBHG.......','GGHBBBHGG.......','..GHBBBHG.......','..HBBBH.........','..HBBBH.........','..GHBBBHG.......','FGHBBBHGF.......','..FGHBGHF.......','...FH.HF........','..H...H.........','................'],
+  dawn:['................','....HBBBBH......','...HBBBBBBH.....','..HBBBBBBBBH....','..HBBBBBBBBBBH..','.HAAAAAAAAAAAAH.','HAAAAAAAAAAAAH..','..HFFFFFFFFFH...','...HFFFFFFFH....','....HFFFFFH.....','......HFH.......','..CCCCCCCCCCCCCC','EEEEEEEEEEEEEEEE','................','................','................'],
+  mastery:['....AAAAA.......','...ABBBBA.......','..ABBCCCBBA.....','..ABBCAAAABBBA..','..ABCAAAAAABBA..','..ABCAAAAAABBA..','..ABBCAAAABBBA..','...ABBCCCBBA....','....AAAAA.......','....AAAAA.......','.....GGG........','....GGGGG.......','...GGGGGGG......','..GGGGGGGGG.....','..GGGGGGGGG.....','GGGGGGGGGGGGG...'],
+  digital:['...EEEEEEE......','..EBBBBBBE......','.EBHHHHHHHBE....','.EBHCCCCCDHBE...','.EBHCAAAACDHBE.','.EBHCAAAACDHBE.','.EBHCAAAACDHBE.','.EBHCCCCCDHBE..','.EBHHHHHHHBE....','..EBBBBBBE......','...EGGGGGE......','....EAAAE.......','...EAAAAAE......','..EAAAAAAAE.....','...EAAAAAE......','................'],
+  gauntlet:['....CCCCC.......','...CAAAAC.......','..CAABBBAC......','.CAABBBBAC......','.CAABBBBAC......','..CAABBAC.......','...CAAAC........','....BBBBB.......','...BFFFFFB......','..BFFFFFFHB.....','..BFFFFFFHB.....','...BFFFFFB......','....BBBBB.......','.....GGG........','....GGGGG.......','...GGGGGGG......'],
+  monk:['....AAAAA.......','...ABBBBA.......','..ABCCCCCBA.....','..ABCBBBBBCBA..','..ABCBFFFBCBA..','..ABCBFFFBCBA..','..ABCBBBBBCBA..','...ABCCCCCBA....','....ABBBBA......','....AAAAA.......','...BBBBBBB......','..BBBBBBBBB.....','..BBBBBBBBBBB..','BBBBBBBBBBBBB...','.BBBBBBBBBBB....','..BBBBBBBBB.....'],
+  sprout:['................','.......CC.......','......CCCC......','....CCCCCCC.....','...CCAAAACC.....','..CCAAAAACC.....','..CCAAAACC......','...CCCCCCC......','....EFFFFE......','...EFFFFFFFE....','....EFFFFFFE....','....FFFFFFF.....','....FFFFFFF.....','....FFFFFFF.....','....FFFFFFF.....','................'],
+  sword:['......CC........','.....CCDC.......','....CCDDC.......','...CCDDCC.......','..CCDDC.........','..CCDDC.........','CCDDC...........','CDDC............','EFFE............','.EFE............','..EE............','...EE...........','....EE..........','.....EE.........','......EE........','.......E........'],
+  shield:['...CCCCCCC......','..CAAAAAAAAC....','..CAADDDDDAAC...','.CAADDDDDAAC....','.CAADDDDDAAC....','.CAADDDDDAAC....','..CAADDDAAC.....','...CAADAAC......','....CAAAC.......','.....CAAC.......','......CAC.......','.......CC.......','........C.......','................','................','................'],
+  flame:['....GGGG........','...GGAAGG.......','..GGAABBGG......','.GGAABBBBGG.....','.GAABBBBBBBG....','GAABBBBBBBBG....','GABBBCCBBBAG....','GABBBCCBBBAG....','GABBCCCCCBAG....','.GABCCCCCBAG....','.GABCCCCCBAG....','..GABCCCBAG.....','...GABCBAG......','....GBBAG.......','.....GAG........','................'],
+  crown:['................','A....A....A.....','AA...AA...AA....','AAA.AAA.AAA.....','AAAAAAAAAAAA....','AABBBBBBBBAA....','AABCCCCCCBAA....','AABCDDDDDCBAA..','AABCDDDDCBAA....','AABBBBBBBBBAA..','AAAAAAAAAAAAA..','AAAAAAAAAAAAA..','................','................','................','................'],
+  gametime:['..AAAAAAAAAAA...','..ABBBBBBBBBBA..','ABCCCCCCCCCCA...','ABCEEEEECCCCA...','ABCEFFFECCCCA...','ABCEFGGECCCCA...','ABCEFGGECCCCA...','ABCEFGGECCCCA...','ABCEFFFECCCCA...','ABCEEEEECCCCA...','ABCCCCCCCCCCA...','..ABBBBBBBBBBA..','...AAAAAAAAAAA..','....HHHH........','...HBBBBH.......','..HBBBBBBH......'],
+};
+
+function drawIcon(canvasEl,key){
+  const map=ICONS[key];const pal=PALETTES[key]||PALETTES.sprout;
+  if(!map||!canvasEl)return;
+  canvasEl.width=16;canvasEl.height=16;
+  const ctx=canvasEl.getContext('2d');
+  const img=ctx.createImageData(16,16);const d=img.data;
+  for(let y=0;y<16;y++){const row=map[y]||'';for(let x=0;x<16;x++){const ch=row[x]||'.';const px=(y*16+x)*4;if(ch==='.'){d[px+3]=0;continue;}const col=pal[ch]||[0,0,0,255];d[px]=col[0];d[px+1]=col[1];d[px+2]=col[2];d[px+3]=col[3];}}
+  ctx.putImageData(img,0,0);
+}
+function makeIconCanvas(key,size){const c=document.createElement('canvas');c.width=16;c.height=16;c.style.imageRendering='pixelated';c.style.width=(size||28)+'px';c.style.height=(size||28)+'px';drawIcon(c,key);return c;}
+
+const QUESTS=[
+  {id:1,minLvl:1,maxLvl:2,cat:"life",diff:"common",iconKey:"bed",xp:30,npc:"Innkeeper Bryson",npcRole:"Guardian of Balance",npcKey:"social",name:"The Morning Oath",desc:"Sloth begins the moment the alarm is silenced and the body returns to its pillow. Today you will break that cycle. Rise within five minutes of waking, make your bed completely, and do not re-enter it for any reason until nightfall.",objectives:["Rise within 5 minutes of your first alarm — no snooze","Make your bed fully: sheets, pillows, everything","Do not get back into bed at any point during the day","Drink a full glass of water before you do anything else"],reward:"30 XP — The day is yours to claim"},
+  {id:2,minLvl:1,maxLvl:2,cat:"life",diff:"common",iconKey:"shower",xp:30,npc:"Innkeeper Bryson",npcRole:"Guardian of Balance",npcKey:"social",name:"Armour Up",desc:"A warrior does not face the day in their sleeping clothes. Shower, dress in real clothes, and be presentable — as though the world might call upon you at any moment. Because it will.",objectives:["Shower before 10am","Dress in proper clothes — no loungewear or pyjamas","Be fully ready to leave the house by midday","Stay dressed for the entire day"],reward:"30 XP — Ready for what comes"},
+  {id:3,minLvl:1,maxLvl:2,cat:"life",diff:"common",iconKey:"food",xp:30,npc:"Innkeeper Bryson",npcRole:"Guardian of Balance",npcKey:"social",name:"The First Meal",desc:"You will not fuel this adventure with biscuits and excuses. Prepare a proper breakfast using actual ingredients. Eggs, oats, fruit — something that required at least a small act of effort to create.",objectives:["Cook or assemble a proper breakfast — not just cereal","Include a real protein source: eggs, yogurt, nuts, or meat","Eat it sitting at a table, not in bed or on the sofa","Do this before 9:30am"],reward:"30 XP — Properly fuelled"},
+  {id:4,minLvl:1,maxLvl:2,cat:"fitness",diff:"common",iconKey:"walk",xp:30,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"gym",name:"Leave the Keep",desc:"The body that does not move begins to decay. Today you will leave your dwelling and walk for at least twenty minutes at a pace that feels deliberate — not a wander, a march.",objectives:["Walk outside for at least 20 minutes","Maintain a purposeful pace — not a slow stroll","Phone must stay pocketed or left behind entirely","Notice where you are — the sky, the street, anything outside your walls"],reward:"30 XP — The walls no longer hold you"},
+  {id:5,minLvl:1,maxLvl:2,cat:"mental",diff:"common",iconKey:"plan",xp:30,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"focus",name:"The War Council",desc:"Before the general rides, they plan. Sit down with paper and write out exactly what you intend to do today. Three specific tasks. Then do all three before the day ends.",objectives:["Write exactly 3 specific, actionable tasks for today on paper","Be specific — not 'be productive', but 'clean the kitchen for 15 minutes'","Complete all 3 tasks before you go to sleep","Tick each one off on paper when done"],reward:"30 XP — Plans become deeds"},
+  {id:6,minLvl:1,maxLvl:2,cat:"mental",diff:"common",iconKey:"phone",xp:30,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"focus",name:"Two Hours Without the Scroll",desc:"Your attention is being stolen from you, and you are handing it over willingly. For two consecutive hours today, your phone will not be touched. No social media. No YouTube. No scrolling of any kind.",objectives:["No phone use for 2 consecutive hours — set it in another room","No social media, YouTube, TikTok, Reddit, or passive browsing","Use the time on a quest, a book, cooking, or being outside","Do this before 6pm — not right before bed as a cheat"],reward:"30 XP — Attention reclaimed"},
+  {id:7,minLvl:3,maxLvl:4,cat:"fitness",diff:"uncommon",iconKey:"run",xp:50,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"gym",name:"The 30-Minute Run",desc:"Not a jog. Not a shuffle. A run — thirty minutes of continuous movement at a pace that forces you to breathe hard. Your legs will want to stop. Your mind will invent reasons. Ignore both.",objectives:["Run continuously for 30 minutes — no walking breaks","Maintain a pace where holding a conversation is genuinely difficult","If you must slow, reduce pace but keep running","Time yourself — this is your benchmark to beat"],reward:"50 XP — The lungs remember this"},
+  {id:8,minLvl:3,maxLvl:4,cat:"life",diff:"uncommon",iconKey:"clean",xp:50,npc:"Innkeeper Bryson",npcRole:"Guardian of Balance",npcKey:"social",name:"Deep Clean the Lair",desc:"Not a tidy. A clean. Thirty minutes minimum, one room completely restored to order. Surfaces wiped, floor done, nothing left where it shouldn't be.",objectives:["Clean one full room for 30 unbroken minutes — no pausing","Surfaces must be wiped, not just cleared","Floor must be hoovered or swept","Nothing on the floor that shouldn't be there","Make your bed and fold any clothing"],reward:"50 XP — The fortress is strong"},
+  {id:9,minLvl:3,maxLvl:4,cat:"mental",diff:"uncommon",iconKey:"book",xp:50,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"focus",name:"Read Without Flinching",desc:"Forty-five minutes with a book or long-form article. Phone in another room. Full attention on words. Your mind will resist — that resistance is the point.",objectives:["Read for 45 uninterrupted minutes","Phone must be in a different room entirely","No background music, TV, or podcasts","If your mind wanders, bring it back — do not stop reading"],reward:"50 XP — Focus sharpened"},
+  {id:10,minLvl:3,maxLvl:4,cat:"life",diff:"uncommon",iconKey:"cook",xp:50,npc:"Innkeeper Bryson",npcRole:"Guardian of Balance",npcKey:"social",name:"Cook Every Meal Today",desc:"For one full day you will not order food or eat from a packet. Every meal — breakfast, lunch, and dinner — cooked from real ingredients.",objectives:["Cook breakfast, lunch, AND dinner from scratch — all three","No takeaway, no ready meals, no skipping a meal","Each meal must contain a protein and a vegetable","Eat each meal at a table"],reward:"50 XP — Self-sufficient"},
+  {id:11,minLvl:3,maxLvl:4,cat:"mental",diff:"uncommon",iconKey:"journal",xp:50,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"focus",name:"The Honest Account",desc:"Write a full page in your journal tonight. Not a list of tasks. A real account: what you did, what you avoided, what you told yourself to justify the avoidance.",objectives:["Write a full page minimum — handwritten is strongly preferred","Account for every significant hour of the day","Be ruthlessly honest about what you avoided and why","End with one specific, actionable commitment for tomorrow"],reward:"50 XP — Accountability forged"},
+  {id:12,minLvl:5,maxLvl:6,cat:"fitness",diff:"rare",iconKey:"gym",xp:100,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"warrior",name:"The Iron Temple",desc:"You will spend no less than fifty minutes in the gym performing heavy compound lifts. You will log every weight lifted — because next time, you will exceed them.",objectives:["50+ minute gym session — arrive with a plan written down","Squat or leg press: 4 sets of 6–8 reps, heavy","Bench press or overhead press: 4 sets","Bent-over row or lat pulldown: 4 sets","10 minutes of cardio to finish","Log every weight — you will beat each number next session"],reward:"100 XP — Iron sharpens iron"},
+  {id:13,minLvl:5,maxLvl:6,cat:"fitness",diff:"rare",iconKey:"deeprun",xp:100,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"warrior",name:"Run Without Mercy",desc:"Five kilometres. No stopping. If your body threatens to quit, slow your pace — but your feet do not stop moving until the distance is done.",objectives:["Run 5km continuously — absolutely no walking","Slow to a shuffle if needed, but never stop","Time it — this is your mark to beat","Stretch properly for 10 minutes immediately after"],reward:"100 XP — The road yields"},
+  {id:14,minLvl:5,maxLvl:6,cat:"mental",diff:"rare",iconKey:"focus",xp:100,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"mastery",name:"The Hour of True Work",desc:"Sixty minutes. One task that actually matters. No music. No phone. Write your goal before you begin and a review when you finish.",objectives:["Write your specific goal for the session before you start","60 uninterrupted minutes on one meaningful, difficult task","Phone in another room — completely out of reach","No music, no background noise","Write what you accomplished and what comes next when the hour ends"],reward:"100 XP — One hour closer to mastery"},
+  {id:15,minLvl:5,maxLvl:6,cat:"life",diff:"rare",iconKey:"social",xp:100,npc:"Innkeeper Bryson",npcRole:"Guardian of Balance",npcKey:"social",name:"Return to the World",desc:"Isolation quietly devours those who struggle with sloth. Today you will reach out — call someone, meet someone, have a real conversation. Not a text. A voice.",objectives:["Contact someone you haven't spoken to in over a week","Have a voice call or in-person conversation — not just texting","Talk for at least 20 minutes — a real conversation","Do not postpone, cancel, or make excuses — do it today, before evening"],reward:"100 XP — The fellowship holds"},
+  {id:16,minLvl:7,maxLvl:8,cat:"fitness",diff:"epic",iconKey:"warrior",xp:150,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"warrior",name:"The Warrior's Full Hour",desc:"A full sixty-minute session of structured, heavy training. Compound lifts at real weight, followed by twenty minutes of conditioning. Rest no longer than ninety seconds between sets.",objectives:["Write your session plan before you arrive","60-minute session — structured, not wandering","Deadlift or squat: 4 sets of 5 reps at a challenging weight","Upper push + pull: 3 sets each","20 minutes HIIT, rowing, or circuit to close","Log every weight, set, and rep"],reward:"150 XP — Forged, not born"},
+  {id:17,minLvl:7,maxLvl:8,cat:"fitness",diff:"epic",iconKey:"dawn",xp:150,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"warrior",name:"The Dawn Protocol",desc:"Wake before the sun. Run five miles in the cold morning air while the rest of the world sleeps. By the time most people open their eyes, you will already be done.",objectives:["Alarm set for 6am — no snooze, no negotiation","Running shoes on within 10 minutes of waking","Run 5 miles — no walking","Return home before 8am","Log your time — you will beat it"],reward:"150 XP — The morning is yours"},
+  {id:18,minLvl:7,maxLvl:8,cat:"mental",diff:"epic",iconKey:"mastery",xp:150,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"mastery",name:"Ninety Minutes of Mastery",desc:"Ninety minutes of complete, undivided focus to the one skill or project that matters most. The greatest performers bore down. Today you do the same.",objectives:["Write your specific objective before the session begins","90 unbroken minutes — phone off, door closed, notifications dead","On one skill or project only — no switching","Write a review at the end: what you built, where you struggled, what is next","Do not count it complete if you checked your phone even once"],reward:"150 XP — Deep practice burns the path"},
+  {id:19,minLvl:7,maxLvl:8,cat:"life",diff:"epic",iconKey:"digital",xp:150,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"mastery",name:"The Full Digital Fast",desc:"For one complete day, your attention belongs entirely to you. No social media. No scrolling. No YouTube. No Reddit. Discover what your mind does when it is not being constantly fed.",objectives:["Zero social media from the moment you wake until midnight","Instagram, TikTok, YouTube Shorts, Reddit, Twitter — all forbidden","Phone used only for calls, texts, and navigation","Every freed moment must be spent on quests, reading, or real conversation","Journal what you noticed at day's end"],reward:"150 XP — Attention fully reclaimed"},
+  {id:20,minLvl:9,maxLvl:99,cat:"fitness",diff:"legendary",iconKey:"gauntlet",xp:250,npc:"Sergeant Ironclad",npcRole:"Fitness Commander",npcKey:"warrior",name:"The Legendary Gauntlet",desc:"In a single day: a full hour of heavy training, a five-mile run, and thirty minutes of cold exposure or yoga. Three separate acts of physical will. You will do all three.",objectives:["Full 60-minute gym session with heavy compound lifts — logged","5-mile run — no walking, time recorded","30 minutes of yoga, 5-minute cold shower, or dedicated stretching","All three completed within the same day","Journal the full day: how did this feel compared to Day One?"],reward:"250 XP — Legendary feat"},
+  {id:21,minLvl:9,maxLvl:99,cat:"mental",diff:"legendary",iconKey:"monk",xp:250,npc:"Sage Elara",npcRole:"Keeper of Knowledge",npcKey:"mastery",name:"The Monk's Day",desc:"No phone from morning to evening. Three hours of deep work on your most important skill. Every meal cooked. One long walk in silence. A complete day of genuine presence.",objectives:["Phone completely away from waking until after dinner","Three hours total of deep focused work — logged, in writing","Cook every meal from scratch","Take a 30-minute walk with no phone and no headphones","Account for every hour of the day in your journal before sleep"],reward:"250 XP — A day truly lived"},
+];
+
+let st=JSON.parse(localStorage.getItem(SK)||'{}');
+st={xp:0,totalXp:0,level:1,completed:[],filter:'all',activeId:null,...st};
+function save(){try{localStorage.setItem(SK,JSON.stringify(st));}catch(e){}}
+function todayStr(){return new Date().toDateString();}
+function isDone(q){return st.completed.some(c=>c.id===q.id&&c.date===todayStr());}
+
+function setFilter(f){
+  st.filter=f;
+  ['all','fitness','mental','life'].forEach(x=>{const b=document.getElementById('f-'+x);if(b)b.className='ftab'+(x===f?' active':'');});
+  renderList();save();
+}
+
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+function showLevelUp(lvl){const w=document.getElementById('lvlup');document.getElementById('lvlup-sub').textContent='You have reached Level '+lvl+'. The challenges ahead are worthy of you.';w.classList.add('show');setTimeout(()=>w.classList.remove('show'),3500);}
+function roman(n){return['','I','II','III','IV','V','VI','VII','VIII','IX','X'][Math.min(n,10)]||n;}
+
+function updateUI(){
+  const lvl=st.level;const tier=getTier(lvl);
+  const prev=xpNeeded(lvl-1)||0;const next=xpNeeded(lvl);
+  const pct=Math.min(100,Math.round(Math.max(0,st.xp-prev)/(next-prev)*100));
+  document.getElementById('char-name-lbl').textContent=tier.cls;
+  document.getElementById('char-tier-lbl').textContent='Tier '+roman(lvl)+' — '+tier.name;
+  document.getElementById('char-class-lbl').textContent=tier.cls;
+  document.getElementById('char-flavor-lbl').textContent=tier.flavor;
+  document.getElementById('lvl-num').textContent=lvl;
+  document.getElementById('total-xp').textContent=st.totalXp;
+  document.getElementById('xp-fill').style.width=pct+'%';
+  document.getElementById('xp-lbl').textContent=st.xp+' / '+next+' XP';
+  document.getElementById('xp-pct').textContent=pct+'%';
+  document.getElementById('p-lvl').textContent='Lv '+lvl;
+  const hoursEarned=Math.floor(st.totalXp/XP_PER_HOUR);const rem=st.totalXp%XP_PER_HOUR;
+  document.getElementById('gt-fill').style.width=Math.round(rem/XP_PER_HOUR*100)+'%';
+  document.getElementById('gt-hrs').textContent=hoursEarned+'h';
+  document.getElementById('gt-sub').textContent=hoursEarned>0?hoursEarned+'h earned! '+(XP_PER_HOUR-rem)+' XP until next hour':'Earn '+XP_PER_HOUR+' XP to unlock 1 hour of game time';
+  const nextTier=TIERS.find(t=>t.minLvl>lvl);
+  document.getElementById('next-unlock').textContent=nextTier?'Reach Level '+nextTier.minLvl+' to unlock: '+nextTier.name:'You stand at the pinnacle. The realm bows to you.';
+  const tierLabel=TIERS.filter(t=>t.minLvl<=lvl).pop();
+  document.getElementById('board-sub').textContent=(tierLabel?tierLabel.name:'')+ ' Challenges — Level '+lvl;
+  const avatarWrap=document.getElementById('char-avatar-wrap');
+  avatarWrap.innerHTML='';avatarWrap.appendChild(makeIconCanvas(tier.avatarKey,36));
+  drawIcon(document.getElementById('icon-gametime'),'gametime');
+}
+
+function renderList(){
+  const list=document.getElementById('qlist');
+  const qs=QUESTS.filter(q=>st.level>=q.minLvl&&st.level<=q.maxLvl&&(st.filter==='all'||q.cat===st.filter));
+  if(!qs.length){list.innerHTML='<div style="padding:12px;font-size:11px;color:#5a3e18;font-family:Georgia,serif;font-style:italic;text-align:center;">No quests for this filter at your current level.</div>';return;}
+  const catNames={fitness:'Fitness',mental:'Mind & Focus',life:'Life & Discipline'};
+  const cats=[...new Set(qs.map(q=>q.cat))];
+  list.innerHTML=cats.map(cat=>`<div class="qlist-cat-lbl">${catNames[cat]||cat}</div>`+qs.filter(q=>q.cat===cat).map(q=>{
+    const done=isDone(q);const sel=st.activeId===q.id;
+    return`<div class="qlist-row${done?' done':''}${sel?' sel':''}" onclick="selectQuest(${q.id})">
+      <div class="qr-icon"><canvas width="16" height="16" style="width:28px;height:28px;image-rendering:pixelated;" id="qicon-${q.id}"></canvas></div>
+      <div class="qr-name ${q.diff}">${q.name}</div>
+      ${done?'<div class="qr-done">✓ DONE</div>':`<div class="qr-xp">+${q.xp} XP</div>`}
+    </div>`;
+  }).join('')).join('');
+  qs.forEach(q=>{const c=document.getElementById('qicon-'+q.id);if(c)drawIcon(c,q.iconKey);});
+}
+
+function selectQuest(id){
+  const q=QUESTS.find(x=>x.id===id);if(!q)return;
+  st.activeId=id;const done=isDone(q);
+  document.getElementById('npc-name').textContent=q.npc;
+  document.getElementById('npc-role').textContent=q.npcRole;
+  document.getElementById('p-name').textContent=q.npc;
+  document.getElementById('p-role').textContent=q.npcRole;
+  drawIcon(document.getElementById('portrait-canvas'),q.npcKey||q.iconKey);
+  document.getElementById('q-title').textContent=q.name;
+  document.getElementById('q-desc').textContent=q.desc;
+  document.getElementById('q-obj-wrap').style.display='block';
+  document.getElementById('q-obj-list').innerHTML=q.objectives.map(o=>`<div class="q-obj">${o}</div>`).join('');
+  document.getElementById('q-reward-wrap').style.display='block';
+  document.getElementById('q-rewards').innerHTML=`<div class="q-reward"><span class="q-reward-xp">+${q.xp} XP</span><span style="color:#c8a060;font-size:11px;font-family:Georgia,serif;margin-left:4px;">${q.reward.split('—')[1]||''}</span></div>`;
+  document.getElementById('footer-tip').textContent=done?'Quest already completed today — return tomorrow':'Accept this quest to begin your trial';
+  document.getElementById('btn-accept').disabled=done;
+  document.getElementById('btn-decline').disabled=done;
+  renderList();save();
+}
+
+function acceptQuest(){
+  const id=st.activeId;if(!id)return;
+  const q=QUESTS.find(x=>x.id===id);if(!q||isDone(q))return;
+  const prevLvl=st.level;st.xp+=q.xp;st.totalXp+=q.xp;
+  st.completed.push({id:q.id,xp:q.xp,date:todayStr(),name:q.name});
+  while(st.xp>=xpNeeded(st.level)&&st.level<10)st.level++;
+  const prevHrs=Math.floor((st.totalXp-q.xp)/XP_PER_HOUR);const newHrs=Math.floor(st.totalXp/XP_PER_HOUR);
+  if(st.level>prevLvl)showLevelUp(st.level);
+  else if(newHrs>prevHrs)showToast('Game Time Unlocked! '+newHrs+'h earned!');
+  else showToast('Quest Complete! +'+q.xp+' XP');
+  document.getElementById('footer-tip').textContent='Quest complete — well done, Champion.';
+  document.getElementById('btn-accept').disabled=true;
+  document.getElementById('btn-decline').disabled=true;
+  save();updateUI();renderList();
+}
+
+function declineQuest(){
+  st.activeId=null;
+  document.getElementById('q-title').textContent='Select a quest from the board below';
+  document.getElementById('q-desc').textContent='Greetings, adventurer. The realm has need of those willing to act. Select a quest from the board and prove yourself worthy. The path to greatness begins with a single deed — however uncomfortable.';
+  document.getElementById('q-obj-wrap').style.display='none';
+  document.getElementById('q-reward-wrap').style.display='none';
+  document.getElementById('footer-tip').textContent='Tap a quest to view details';
+  document.getElementById('btn-accept').disabled=true;
+  document.getElementById('btn-decline').disabled=true;
+  document.getElementById('npc-name').textContent='Questmaster Aldric';
+  document.getElementById('npc-role').textContent='Quest Giver';
+  drawIcon(document.getElementById('portrait-canvas'),'sprout');
+  renderList();save();
+}
+
+updateUI();renderList();
+</script>
+<div id="splash" style="position:fixed;inset:0;background:#0a0805;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.6s ease;">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAACt0lEQVR4nO3SsU1kMQBF0RESGxAQIYraVihpCiOZIqYDEPmuZMkf2XP/CU5s+/leXv48fUHFZfUF4EiCJkXQpAialH8G/fH3DbYnaFIETYqgSRE0KVNBv78+n8rtdjvU6vc8OkFPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBD1J0HsR9CRB70XQkwS9F0FPEvReBP0fR4f69XkZInxBCxpBC7pJ0IJOEbSgUwQt6BRBCzpF0IJOEbSgUwQt6JTTBb0qVEELWtCCFrSgz03Qgk4RtKBTBC3oFEELOkXQgk4RtKBTBC3olEzQlVAFLWhBI2hBNwla0CmCFnSKoAWdImhBpwha0CmCFnSKoAWdsn3QlVBXf/RZCFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKYcHLSwELWgELWgEvXxwBC1oBC3ocxI0KYImRdCkCJqUw4O+Xq9D7vf7EqsHR9CCRtCCPidBkyJoUgRNiqBJETQpgiZF0KQcHvTowavCXz04ghY0wwRNiqBJETQpgiZF0KQImhRBkyJoUpYFPWo0/FGrB+d3CZoUQZMiaFIETYqgSRE0KYImRdCkCJqU7YMeJXx+CFrQKYIWdIqgBZ0iaEGnCFrQKYIWdIqgBZ0iaEGnCFrQKZmgRwm/TdCCThG0oFMELegUQQs6RdCCThG0oFMELegUQQs6RdCCTjld0LQJmhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImpTDg4bdCJoUQZMiaFIETcpw0PCoBE2KoEkRNCmCJuUbxfKDUBXPXUwAAAAASUVORK5CYII=" style="width:120px;height:120px;image-rendering:pixelated;margin-bottom:24px;border-radius:16px;">
+  <div style="font-family:'MedievalSharp',Georgia,serif;font-size:22px;color:#ffd040;text-shadow:1px 1px 4px rgba(200,150,0,0.6);letter-spacing:2px;">Quest Log</div>
+  <div style="font-size:11px;color:#8a6030;font-family:Georgia,serif;font-style:italic;margin-top:6px;letter-spacing:2px;">Your destiny awaits</div>
+</div>
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var s = document.getElementById('splash');
+    if (s) { s.style.opacity = '0'; setTimeout(function() { s.remove(); }, 600); }
+  }, 1200);
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  const swCode = `
+const CACHE = 'questlog-v1';
+self.addEventListener('install', e => {
+  self.skipWaiting();
+});
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))));
+  self.clients.claim();
+});
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.open(CACHE).then(cache =>
+      cache.match(e.request).then(cached => {
+        const fetched = fetch(e.request).then(resp => { cache.put(e.request, resp.clone()); return resp; }).catch(() => cached);
+        return cached || fetched;
+      })
+    )
+  );
+});
+`;
+  const blob = new Blob([swCode], {type: 'application/javascript'});
+  const url = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(url).catch(() => {});
+}
+</script>
+</body>
+</html>
